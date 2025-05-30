@@ -1,10 +1,17 @@
 import React from 'react';
 import Link from 'next/link';
 
-export default function AuthNavbar() {
+export default function AuthNavbar({ customClassName = "" }) {
   return (
     <div className="w-full flex justify-center pt-6 pb-2 bg-transparent">
-      <nav className="w-full max-w-6xl flex items-center justify-between px-6 py-3 bg-white/80 backdrop-blur-lg rounded-full shadow-lg border border-gray-100" style={{marginTop: 0}}>
+      <nav
+        className={
+          customClassName
+            ? `w-full max-w-6xl flex items-center justify-between px-6 py-3 ${customClassName}`
+            : "w-full max-w-6xl flex items-center justify-between px-6 py-3 bg-white/80 backdrop-blur-lg rounded-full shadow-lg border border-gray-100"
+        }
+        style={{ marginTop: 0 }}
+      >
         {/* Logo */}
         <div className="flex items-center gap-2">
           <span className="font-bold text-md text-black">Soft UI Dashboard 3</span>
