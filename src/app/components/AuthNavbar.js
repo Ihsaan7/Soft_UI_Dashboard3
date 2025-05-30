@@ -1,26 +1,27 @@
 import React from 'react';
 import Link from 'next/link';
 
-export default function AuthNavbar({ type = 'signin' }) {
+export default function AuthNavbar() {
   return (
-    <nav className="w-full flex items-center justify-between px-8 py-4 bg-white shadow-sm border-b border-gray-200">
-      <div className="flex items-center gap-2">
-        <img src="/profileB.png" alt="Logo" className="w-10 h-10 rounded-lg" />
-        <span className="font-bold text-xl text-orange-500">Soft UI</span>
-      </div>
-      <div>
-        {type === 'signin' ? (
-          <span className="text-gray-600 text-sm">
-            Don&apos;t have an account?{' '}
-            <Link href="/SignUp" className="text-orange-500 font-bold hover:underline">Sign Up</Link>
-          </span>
-        ) : (
-          <span className="text-gray-600 text-sm">
-            Already have an account?{' '}
-            <Link href="/SignIn" className="text-orange-500 font-bold hover:underline">Sign In</Link>
-          </span>
-        )}
-      </div>
-    </nav>
+    <div className="w-full flex justify-center pt-6 pb-2 bg-transparent">
+      <nav className="w-full max-w-6xl flex items-center justify-between px-6 py-3 bg-white/80 backdrop-blur-lg rounded-full shadow-lg border border-gray-100" style={{marginTop: 0}}>
+        {/* Logo */}
+        <div className="flex items-center gap-2">
+          <span className="font-bold text-md text-black">Soft UI Dashboard 3</span>
+        </div>
+        {/* Nav Links */}
+        <div className="hidden md:flex items-center gap-8">
+          <Link href="/" className="text-gray-700 font-bold hover:text-orange-500 transition text-sm">Dashboard</Link>
+          <Link href="/Profile" className="text-gray-700 font-bold hover:text-orange-500 transition text-sm">Profile</Link>
+          <Link href="/SignUp" className="text-gray-700 font-bold hover:text-orange-500 transition text-sm  ">Sign Up</Link>
+          <Link href="/SignIn" className="text-gray-700 font-bold hover:text-orange-500 transition text-sm ">Sign In</Link>
+        </div>
+        {/* Buttons with gradient bg */}
+        <div className="flex items-center gap-3  to-pink-100 rounded-full px-2 py-1">
+          <button className="border-2 border-orange-400 text-orange-500 font-bold rounded-full px-2 py-1.5 hover:bg-white transition-all text-xs ">Online Builder</button>
+          <button className="bg-black text-white font-bold rounded-full px-5 py-1.5 hover:bg-gray-800 transition-all text-sm">Free download</button>
+        </div>
+      </nav>
+    </div>
   );
 }
