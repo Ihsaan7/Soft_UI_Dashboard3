@@ -1,6 +1,35 @@
 'use client'
 import { useContext } from 'react';
 import { NavbarContext } from '../ClientLayout';
+import React from 'react';
+
+const avatars = [
+  "https://randomuser.me/api/portraits/men/32.jpg",
+  "https://randomuser.me/api/portraits/women/44.jpg",
+  "https://randomuser.me/api/portraits/men/65.jpg",
+  "https://randomuser.me/api/portraits/women/68.jpg"
+];
+
+function ProjectCard({ img, number, title, desc }) {
+  return (
+    <div className="rounded-xl shadow-md bg-white p-4 flex flex-col gap-3">
+      <img src={img} alt={title} className="rounded-lg w-full h-40 object-cover" />
+      <div>
+        <span className="text-gray-500 font-semibold text-sm">{number}</span>
+        <h4 className="font-bold text-black text-xl mt-1">{title}</h4>
+        <p className="text-gray-500 text-sm mt-1">{desc}</p>
+      </div>
+      <div className="flex items-center justify-between mt-2">
+        <button className="border-2 border-orange-400 text-orange-400 font-bold rounded-lg px-4 py-1 hover:bg-orange-400 hover:text-white transition-all">View Project</button>
+        <div className="flex -space-x-4">
+          {avatars.map((src, i) => (
+            <img key={i} src={src} className="w-8 h-8 rounded-full border-2 border-white" alt={`User ${i+1}`} style={{zIndex: 10-i}} />
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+}
 
 export default function Profile() {
     const { setIsNavOpen } = useContext(NavbarContext);
@@ -133,7 +162,37 @@ export default function Profile() {
                     </div>
                 </div>
 
-
+                {/* Projects Section */}
+                <div className="border border-gray-300 rounded-lg p-6 bg-white flex flex-col gap-4">
+                  <h3 className="text-black text-lg font-semibold mb-2">Projects</h3>
+                  <p className="text-gray-500 mb-4">Architects design houses</p>
+                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                    <ProjectCard
+                      img="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80"
+                      number="Project #1"
+                      title="Modern"
+                      desc="As Uber works through a huge amount of internal management turmoil."
+                    />
+                    <ProjectCard
+                      img="https://images.unsplash.com/photo-1512918728675-ed5a9ecdebfd?auto=format&fit=crop&w=400&q=80"
+                      number="Project #2"
+                      title="Scandinavian"
+                      desc="Music is something that every person has his or her own specific opinion."
+                    />
+                    <ProjectCard
+                      img="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=400&q=80"
+                      number="Project #3"
+                      title="Minimalist"
+                      desc="Minimalism is not a lack of something. It's simply the perfect amount of something."
+                    />
+                    <ProjectCard
+                      img="https://images.unsplash.com/photo-1507089947368-19c1da9775ae?auto=format&fit=crop&w=400&q=80"
+                      number="Project #4"
+                      title="Industrial"
+                      desc="Industrial design is a process of design applied to products that are to be manufactured."
+                    />
+                  </div>
+                </div>
 
                 <div className='Conversation'>
 
