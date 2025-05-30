@@ -1,5 +1,5 @@
 import "./globals.css";
-import ClientLayout from './ClientLayout';
+import ClientLayoutWrapper from "@/ClientLayoutWrapper";
 
 export const metadata = {
   title: "Next.js Dashboard",
@@ -10,9 +10,9 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body>
-        <ClientLayout>
+        <ClientLayoutWrapper>
           {children}
-        </ClientLayout>
+        </ClientLayoutWrapper>
       </body>
     </html>
   );
