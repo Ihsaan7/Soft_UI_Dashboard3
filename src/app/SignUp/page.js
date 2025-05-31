@@ -6,7 +6,7 @@ import Link from 'next/link';
 export default function SignUp() {
   const ABSTRACT_IMAGE = "https://images.unsplash.com/photo-1632516643720-e7f5d7d6ecc9?q=80&w=1311&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D";
   return (
-    <div className="min-h-screen w-full bg-white flex flex-col">
+    <div className="lg:min-h-screen h-fit  w-full bg-white flex flex-col">
       {/* Navbar - transparent, sits on top of image */}
       <div className="absolute w-full z-30">
         <AuthNavbar customClassName="bg-transparent shadow-none border-none" />
@@ -16,7 +16,7 @@ export default function SignUp() {
         <img
           src={ABSTRACT_IMAGE}
           alt="Abstract Art"
-          className="absolute inset-0 w-full h-full object-cover z-0 rounded-b-2xl max-h-[400px]"
+          className="absolute  inset-0 w-full h-full object-cover z-0 lg:rounded-b-2xl max-h-[400px]"
         />
         {/* Removed fade/overlay */}
         <div className="relative z-20 flex flex-col items-center justify-center py-16 px-4 w-full">
@@ -27,7 +27,7 @@ export default function SignUp() {
         </div>
       </div>
       {/* Registration Card */}
-      <div className="flex-1 flex flex-col items-center justify-center py-8 px-2 bg-white">
+      <div className="flex-1 flex flex-col items-center justify-center lg:py-8 pt-40 px-2 bg-white">
         <div className="w-full max-w-md bg-white rounded-xl shadow-xl p-8 mt-[-120px] z-30 relative flex flex-col gap-4">
           <h2 className="text-xl font-semibold text-center mb-2 text-black">Register with</h2>
           {/* Social Buttons */}

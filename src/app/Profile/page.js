@@ -71,16 +71,16 @@ export default function Profile() {
                 </div>
             </nav>
             {/* Main Section */}
-            <div className='border border-gray-300 rounded-lg p-4 gap-5 flex flex-col'>
+            <div className=' p-4 gap-5 flex flex-col'>
                 <div className='border bg-orange-400 border-gray-300 rounded-lg flex flex-row justify-between px-4'>
                     <div className='py-5'>
-                        <img src='./profileB.png' className=' w-20 h-20 rounded-lg border border-white'></img>
+                        <img src='./mypic (1).jpg' className='object-cover w-30 h-30 rounded-lg '></img>
                         <h3 className='text-white font-bold text-2xl w-10 py-2'>IHSAAN ULLAH</h3>
                         <p className='text-white font-semibold'>CEO/Co-Founder</p>
                     </div>
                     <div className='flex flex-col gap-2 justify-center items-end'>
-                        <button className='border border-white rounded-lg p-2 font-bold'>Edit Profile</button>
-                        <button className='border border-white rounded-lg p-2 font-bold'>Change Password</button>
+                        <button className='border border-white rounded-lg p-2 font-bold hover:cursor-pointer'>Edit Profile</button>
+                        <button className='border border-white rounded-lg p-2 font-bold hover:cursor-pointer'>Change Password</button>
                     </div>
                 </div>
 
@@ -91,21 +91,21 @@ export default function Profile() {
                     <div>
                         <h3 className='text-black text-lg font-semibold pb-2'>Account</h3>
                         <div className="flex flex-col gap-4">
-                            <div className="flex gap-5">
+                            <div className="flex items-center gap-5">
                                 <label className="relative inline-flex items-center cursor-pointer">
                                     <input type="checkbox" className="sr-only peer" defaultChecked />
                                     <div className="w-11 h-6 bg-gray-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-orange-500"></div>
                                 </label>
                                 <span className="text-gray-600">Email me when someone follows me</span>
                             </div>
-                            <div className="flex gap-5">
+                            <div className="flex items-center gap-5">
                                 <label className="relative inline-flex items-center cursor-pointer">
                                     <input type="checkbox" className="sr-only peer" />
                                     <div className="w-11 h-6 bg-gray-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-orange-500"></div>
                                 </label>
                                 <span className="text-gray-600">Email me when someone mentions me</span>
                             </div>
-                            <div className="flex gap-5">
+                            <div className="flex items-center gap-5">
                                 <label className="relative inline-flex items-center cursor-pointer">
                                     <input type="checkbox" className="sr-only peer" defaultChecked />
                                     <div className="w-11 h-6 bg-gray-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-orange-500"></div>
@@ -115,24 +115,24 @@ export default function Profile() {
                         </div>
                     </div>
                     <div>
-                        <h3 className='text-black text-lg font-semibold pb-5 pt-10 '>Applications</h3>
+                        <h3 className='text-black text-lg font-semibold pb-5 pt-10'>Applications</h3>
                         <div className="flex flex-col gap-4">
-                            <div className="flex gap-5">
+                            <div className="flex items-center gap-5">
                                 <label className="relative inline-flex items-center cursor-pointer">
                                     <input type="checkbox" className="sr-only peer" />
                                     <div className="w-11 h-6 bg-gray-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-orange-500"></div>
                                 </label>
-                                <span className="text-gray-600 ">New launches and projects</span>
+                                <span className="text-gray-600">New launches and projects</span>
                             </div>
 
-                            <div className="flex gap-5">
+                            <div className="flex items-center gap-5">
                                 <label className="relative inline-flex items-center cursor-pointer">
                                     <input type="checkbox" className="sr-only peer" defaultChecked />
                                     <div className="w-11 h-6 bg-gray-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-orange-500"></div>
                                 </label>
                                 <span className="text-gray-600">Monthly project updates</span>
                             </div>
-                            <div className="flex gap-5">
+                            <div className="flex items-center gap-5">
                                 <label className="relative inline-flex items-center cursor-pointer">
                                     <input type="checkbox" className="sr-only peer" />
                                     <div className="w-11 h-6 bg-gray-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-orange-500"></div>

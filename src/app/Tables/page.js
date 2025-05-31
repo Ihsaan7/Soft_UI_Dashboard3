@@ -9,42 +9,42 @@ export default function Tables() {
   const projectData = [
     {
       name: 'Spotify',
-      logo: './profileB.png',
+      logo: 'https://cdn-icons-png.flaticon.com/512/174/174872.png',
       budget: '$2,500',
       status: 'working',
       completion: 60,
     },
     {
       name: 'Invision',
-      logo: './profileB.png',
+      logo: 'https://cdn-icons-png.flaticon.com/512/5968/5968705.png',
       budget: '$5,000',
       status: 'done',
       completion: 100,
     },
     {
       name: 'Jira',
-      logo: './profileB.png',
+      logo: 'https://cdn-icons-png.flaticon.com/512/5968/5968871.png',
       budget: '$3,400',
       status: 'canceled',
       completion: 30,
     },
     {
       name: 'Slack',
-      logo: './profileB.png',
+      logo: 'https://cdn-icons-png.flaticon.com/512/5968/5968817.png',
       budget: '$1,000',
       status: 'canceled',
       completion: 0,
     },
     {
       name: 'Webdev',
-      logo: './profileB.png',
+      logo: 'https://cdn-icons-png.flaticon.com/512/5968/5968292.png',
       budget: '$14,000',
       status: 'working',
       completion: 80,
     },
     {
       name: 'Adobe XD',
-      logo: './profileB.png',
+      logo: 'https://cdn-icons-png.flaticon.com/512/5968/5968702.png',
       budget: '$2,300',
       status: 'done',
       completion: 100,
@@ -96,11 +96,11 @@ export default function Tables() {
       </nav>
 
       {/* Main Content */}
-      <div className='text-black '>
+      <div className='text-black py-5'>
         <div className="px-3 space-y-6">
-          <div className="bg-white rounded-sm p-3 shadow-md w-full h-120 overflow-y-hidden">
+          <div className="bg-white rounded-sm p-3 shadow-md w-full h-120 overflow-y-auto">
             <h2 className="text-xl font-bold text-gray-800 mb-4 pl-5">Authors Table</h2>
-            <div className="overflow-x-auto">
+            <div className="overflow-x-auto ">
               <div className="min-w-[800px] lg:w-full">
                 {/* Table Header */}
                 <div className="grid grid-cols-5 gap-5 mb-2 pb-4 px-15 border-b border-gray-200">
@@ -117,7 +117,7 @@ export default function Tables() {
                   <div className="grid grid-cols-5 gap-4 items-center py-2 bg-white rounded-xl shadow-sm hover:bg-gray-50 transition-colors">
                     {/* Author */}
                     <div className="flex items-center gap-4 min-w-[200px]">
-                      <img src="./profileB.png" alt="profile" className="w-10 h-10 rounded-full object-cover" />
+                      <img src="https://i.pravatar.cc/150?img=1" alt="profile" className="w-10 h-10 rounded-full object-cover" />
                       <div className="flex flex-col">
                         <span className="font-bold text-gray-900 leading-tight">John Michael</span>
                         <span className="text-xs text-gray-500 leading-tight">john@creative-tim.com</span>
@@ -144,7 +144,7 @@ export default function Tables() {
                   {/* Row 2 */}
                   <div className="grid grid-cols-5 gap-4 items-center py-2 bg-white rounded-lg shadow-sm hover:bg-gray-50 transition-colors">
                     <div className="flex items-center gap-4 min-w-[200px]">
-                      <img src="./profileB.png" alt="profile" className="w-10 h-10 rounded-full object-cover" />
+                      <img src="https://i.pravatar.cc/150?img=2" alt="profile" className="w-10 h-10 rounded-full object-cover" />
                       <div className="flex flex-col">
                         <span className="font-bold text-gray-900 leading-tight">Alexa Liras</span>
                         <span className="text-xs text-gray-500 leading-tight">alexa@creative-tim.com</span>
@@ -167,7 +167,7 @@ export default function Tables() {
                   {/* Row 3 */}
                     <div className="grid grid-cols-5 gap-4 items-center  py-2 bg-white rounded-lg shadow-sm hover:bg-gray-50 transition-colors">
                     <div className="flex items-center gap-4 min-w-[200px]">
-                      <img src="./profileB.png" alt="profile" className="w-10 h-10 rounded-full object-cover" />
+                      <img src="https://i.pravatar.cc/150?img=3" alt="profile" className="w-10 h-10 rounded-full object-cover" />
                       <div className="flex flex-col">
                         <span className="font-bold text-gray-900 leading-tight">Laurent Perrier</span>
                         <span className="text-xs text-gray-500 leading-tight">laurent@creative-tim.com</span>
@@ -190,7 +190,7 @@ export default function Tables() {
                   {/* Row 4 */}
                   <div className="grid grid-cols-5 gap-4 items-center  py-2 bg-white rounded-lg shadow-sm hover:bg-gray-50 transition-colors">
                     <div className="flex items-center gap-4 min-w-[200px]">
-                      <img src="./profileB.png" alt="profile" className="w-10 h-10 rounded-full object-cover" />
+                      <img src="https://i.pravatar.cc/150?img=4" alt="profile" className="w-10 h-10 rounded-full object-cover" />
                       <div className="flex flex-col">
                         <span className="font-bold text-gray-900 leading-tight">Michael Levi</span>
                         <span className="text-xs text-gray-500 leading-tight">michael@creative-tim.com</span>
@@ -213,7 +213,7 @@ export default function Tables() {
                   {/* Row 5 */}
                   <div className="grid grid-cols-5 gap-4 items-center  py-2 bg-white rounded-lg shadow-sm hover:bg-gray-50 transition-colors">
                     <div className="flex items-center gap-4 min-w-[200px]">
-                      <img src="./profileB.png" alt="profile" className="w-10 h-10 rounded-full object-cover" />
+                      <img src="https://i.pravatar.cc/150?img=5" alt="profile" className="w-10 h-10 rounded-full object-cover" />
                       <div className="flex flex-col">
                         <span className="font-bold text-gray-900 leading-tight">Richard Gran</span>
                         <span className="text-xs text-gray-500 leading-tight">richard@creative-tim.com</span>
@@ -236,7 +236,7 @@ export default function Tables() {
                   {/* Row 6 */}
                   <div className="grid grid-cols-5 gap-4 items-center py-2 bg-white rounded-lg shadow-sm hover:bg-gray-50 transition-colors">
                     <div className="flex items-center gap-4 min-w-[200px]">
-                      <img src="./profileB.png" alt="profile" className="w-10 h-10 rounded-full object-cover" />
+                      <img src="https://i.pravatar.cc/150?img=6" alt="profile" className="w-10 h-10 rounded-full object-cover" />
                       <div className="flex flex-col">
                         <span className="font-bold text-gray-900 leading-tight">Miriam Eric</span>
                         <span className="text-xs text-gray-500 leading-tight">miriam@creative-tim.com</span>

@@ -1,5 +1,9 @@
 import "./globals.css";
 import ClientLayoutWrapper from "@/ClientLayoutWrapper";
+import { Inter } from 'next/font/google';
+import Footer from './components/Footer';
+
+const inter = Inter({ subsets: ['latin'] });
 
 export const metadata = {
   title: "Next.js Dashboard",
@@ -9,7 +13,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body>
+      <body className={inter.className}>
         <ClientLayoutWrapper>
           {children}
         </ClientLayoutWrapper>

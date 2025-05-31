@@ -1,11 +1,20 @@
 'use client';
 import { usePathname } from 'next/navigation';
 import ClientLayout from './app/ClientLayout';
+import Footer from './app/components/Footer';
 
 export default function ClientLayoutWrapper({ children }) {
   const pathname = usePathname();
-  if (pathname === '/SignIn' || pathname === '/SignUp') {
+  const isAuthPage = pathname === '/SignIn' || pathname === '/SignUp';
+
+  if (isAuthPage) {
     return <>{children}</>;
   }
-  return <ClientLayout>{children}</ClientLayout>;
+
+  return (
+    <ClientLayout>
+      {children}
+      <Footer />
+    </ClientLayout>
+  );
 }

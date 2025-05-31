@@ -11,10 +11,12 @@ export default function SignIn() {
       <div className="hidden lg:block absolute top-0 right-0 w-1/2 h-full z-0 pointer-events-none">
         <img src={ABSTRACT_IMAGE} alt="Abstract Art" className="w-full h-full object-cover -rotate-6 origin-top-right" style={{ minHeight: '100vh' }} />
       </div>
+      
       {/* Navbar (with transparency) */}
-      <div className="relative z-10">
+      <div className="relative z-50">
         <AuthNavbar />
       </div>
+
       <main className="flex flex-1 flex-col lg:flex-row w-full max-w-7xl mx-auto relative z-10">
         {/* Left: Form */}
         <div className="flex-1 flex items-center justify-center px-4 py-8">

@@ -91,12 +91,12 @@ export default function VirtualReality() {
         <div className="bg-gradient-to-r from-gray-900 to-gray-800 rounded-xl p-8 text-white relative overflow-hidden">
           <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-10"></div>
           <div className="relative z-10">
-            <h1 className="text-4xl font-bold mb-4 bg-gradient-to-r from-orange-400 to-orange-600 bg-clip-text text-transparent">
+            <h1 className="text-4xl font-bold mb-4 bg-gradient-to-r from-white to-orange-700 bg-clip-text text-transparent">
               Immersive Analytics
             </h1>
             <p className="text-lg mb-6 text-gray-300">Transform your data into interactive 3D experiences</p>
             <div className="flex gap-4">
-              <button className="bg-orange-400 text-white px-6 py-3 rounded-lg font-bold hover:bg-orange-500 transition-all shadow-lg hover:shadow-orange-400/30">
+              <button className="border-2 border-orange-400 text-white px-6 py-3 rounded-lg font-bold hover:bg-orange-400/10 transition-all ">
                 Enter VR Space
               </button>
               <button className="border-2 border-orange-400 text-white px-6 py-3 rounded-lg font-bold hover:bg-orange-400/10 transition-all">
@@ -131,7 +131,7 @@ export default function VirtualReality() {
                       </div>
                       <div className="w-full bg-gray-200 rounded-full h-2">
                         <div
-                          className="bg-orange-400 h-2 rounded-full"
+                          className="bg-gray-800 h-2 rounded-full"
                           style={{ width: `${project.progress}%` }}
                         ></div>
                       </div>

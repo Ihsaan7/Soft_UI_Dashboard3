@@ -41,7 +41,7 @@ const ProjectItem = ({ icon, title, members }) => (
     <div className="flex justify-between items-center">
       <div className="flex gap-3 items-center">
         <div className="w-8 h-8 rounded-xl flex items-center justify-center bg-gray-100 shadow-[0_4px_6px_-1px_rgba(0,0,0,0.1)] group-hover:shadow-[0_8px_9px_-4px_rgba(0,0,0,0.1),0_4px_18px_0_rgba(0,0,0,0.1)] transition-shadow duration-300">
-          <img src={icon} alt={title} className="w-5 h-5" />
+          <img src={icon} alt={title} className="w-5 h-5 object-contain" />
         </div>
         <h4 className="text-gray-700 text-sm font-semibold group-hover:text-gray-900 transition-colors">{title}</h4>
       </div>
@@ -53,7 +53,7 @@ const ProjectItem = ({ icon, title, members }) => (
               alt={member.name} 
               className="w-8 h-8 rounded-full border-2 border-white hover:z-10 transition-all duration-300 shadow-[0_4px_6px_-1px_rgba(0,0,0,0.1)] hover:shadow-[0_8px_9px_-4px_rgba(0,0,0,0.1),0_4px_18px_0_rgba(0,0,0,0.1)]"
             />
-            <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-2 py-1 bg-gray-900 text-white text-xs rounded-lg opacity-0 group-hover/member:opacity-100 transition-opacity whitespace-nowrap shadow-[0_4px_6px_-1px_rgba(0,0,0,0.1)]">
+            <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-2 py-1 bg-gray-900 text-white text-xs rounded-lg opacity-0 group-hover/member:opacity-100 transition-opacity whitespace-nowrap shadow-[0_4px_6px_-1px_rgba(0,0,0,0.1)] z-50">
               {member.name}
               <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-1/2 rotate-45 w-2 h-2 bg-gray-900"></div>
             </div>
@@ -68,7 +68,7 @@ const OrderItem = ({ icon, title, timestamp }) => (
   <div className="flex gap-6 mb-4 relative group">
     <div className="relative z-10">
       <div className="w-8 h-8 rounded-xl bg-gray-100 flex items-center justify-center shadow-[0_4px_6px_-1px_rgba(0,0,0,0.1)] group-hover:shadow-[0_8px_9px_-4px_rgba(0,0,0,0.1),0_4px_18px_0_rgba(0,0,0,0.1)] transition-shadow duration-300">
-        <img src={`./icons/${icon}`} alt={icon.split('.')[0]} className="w-4 h-4" />
+        <img src={icon} alt={icon.split('/').pop().split('.')[0]} className="w-4 h-4" />
       </div>
       <div className="absolute top-8 left-1/2 -translate-x-1/2 w-0.5 h-full bg-gradient-to-b from-gray-200 to-transparent" />
     </div>
@@ -80,7 +80,7 @@ const OrderItem = ({ icon, title, timestamp }) => (
 );
 
 const FeatureCard = ({ title, subtitle, description, image, linkText }) => (
-  <div className="bg-white rounded-xl p-4 shadow-md h-full">
+  <div className="bg-white rounded-xl p-4 shadow-[0_20px_25px_-5px_rgba(0,0,0,0.1),0_10px_10px_-5px_rgba(0,0,0,0.04)] h-full">
     <div className="flex flex-col h-full">
       <div className="mb-2">
         <h4 className="text-gray-500 text-sm font-medium">{subtitle}</h4>
@@ -107,7 +107,7 @@ const FeatureCard = ({ title, subtitle, description, image, linkText }) => (
 );
 
 const CallToAction = () => (
-  <div className="bg-white rounded-xl p-6 shadow-md h-full">
+  <div className="bg-white rounded-xl p-6 shadow-[0_20px_25px_-5px_rgba(0,0,0,0.1),0_10px_10px_-5px_rgba(0,0,0,0.04)] h-full">
     <div className="bg-gray-900 rounded-xl p-6 text-white h-full flex flex-col justify-between transform transition-all duration-300 hover:scale-[1.02] shadow-[0_0_15px_rgba(0,0,0,0.2)] relative overflow-hidden">
       <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-br from-blue-500/20 to-purple-500/20 blur-3xl rounded-full transform translate-x-1/2 -translate-y-1/2"></div>
       
@@ -146,7 +146,7 @@ const CallToAction = () => (
 const StatCard = ({ icon, label, value, progress }) => (
   <div className="flex flex-col items-center group hover:transform hover:scale-105 transition-all duration-300">
     <div className="w-12 h-12 rounded-xl bg-gray-100 p-2.5 mb-3 shadow-[0_4px_6px_-1px_rgba(0,0,0,0.1)] group-hover:shadow-[0_8px_9px_-4px_rgba(0,0,0,0.1),0_4px_18px_0_rgba(0,0,0,0.1)] transition-shadow duration-300">
-      <img src={icon} alt={label} className="w-full h-full" />
+      <img src={icon} alt={label} className="w-full h-full object-contain" />
     </div>
     <div className="flex flex-col items-center mb-3">
       <h3 className="text-gray-600 font-medium text-sm mb-1">{label}</h3>
@@ -192,14 +192,14 @@ const BarChart = () => {
 
 const ActiveUsersCard = () => {
   const stats = [
-    { icon: './profileB.png', label: 'Users', value: '36K', progress: 85 },
-    { icon: './profileB.png', label: 'Clicks', value: '2.4K', progress: 65 },
-    { icon: './profileB.png', label: 'Sales', value: '1.2K', progress: 45 },
-    { icon: './profileB.png', label: 'Items', value: '260', progress: 70 }
+    { icon: 'https://cdn-icons-png.flaticon.com/512/1077/1077114.png', label: 'Users', value: '36K', progress: 85 },
+    { icon: 'https://cdn-icons-png.flaticon.com/512/1828/1828395.png', label: 'Clicks', value: '2.4K', progress: 65 },
+    { icon: 'https://cdn-icons-png.flaticon.com/512/2838/2838895.png', label: 'Sales', value: '1.2K', progress: 45 },
+    { icon: 'https://cdn-icons-png.flaticon.com/512/2838/2838895.png', label: 'Items', value: '260', progress: 70 }
   ];
 
   return (
-    <div className="px-4 rounded-xl">
+    <div className="px-4 lg:px-1 rounded-xl">
       <div className="p-6 rounded-xl bg-white shadow-[0_20px_25px_-5px_rgba(0,0,0,0.1),0_10px_10px_-5px_rgba(0,0,0,0.04)]">
         <div className="bg-gray-900 px-6 py-8 rounded-xl text-white shadow-[0_4px_6px_-1px_rgba(0,0,0,0.1)]">
           <div className="flex gap-8">
@@ -224,7 +224,7 @@ const ActiveUsersCard = () => {
             </div>
           </div>
 
-          <div className="grid grid-cols-4 gap-8">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8">
             {stats.map((stat, index) => (
               <StatCard key={index} {...stat} />
             ))}
@@ -387,65 +387,87 @@ export default function Home() {
 
   const projects = [
     {
-      icon: './icons/xd.png',
+      icon: 'https://cdn-icons-png.flaticon.com/512/5968/5968705.png', // Adobe XD logo
       title: 'Soft UI XD Version',
-      members: Array(4).fill({ avatar: './profileB.png', name: 'John Doe' })
+      members: [
+        { avatar: 'https://randomuser.me/api/portraits/men/1.jpg', name: 'John Doe' },
+        { avatar: 'https://randomuser.me/api/portraits/women/2.jpg', name: 'Jane Smith' },
+        { avatar: 'https://randomuser.me/api/portraits/men/3.jpg', name: 'Mike Johnson' },
+        { avatar: 'https://randomuser.me/api/portraits/women/4.jpg', name: 'Sarah Wilson' }
+      ]
     },
     {
-      icon: './icons/progress.png',
+      icon: 'https://cdn-icons-png.flaticon.com/512/2387/2387633.png', // Progress icon
       title: 'Add Progress Track',
-      members: Array(2).fill({ avatar: './profileB.png', name: 'John Doe' })
+      members: [
+        { avatar: 'https://randomuser.me/api/portraits/men/5.jpg', name: 'Alex Brown' },
+        { avatar: 'https://randomuser.me/api/portraits/women/6.jpg', name: 'Emma Davis' }
+      ]
     },
     {
-      icon: './icons/bug.png',
+      icon: 'https://cdn-icons-png.flaticon.com/512/753/753345.png', // Bug icon
       title: 'Fix Platform Errors',
-      members: Array(2).fill({ avatar: './profileB.png', name: 'John Doe' })
+      members: [
+        { avatar: 'https://randomuser.me/api/portraits/men/7.jpg', name: 'Tom Wilson' },
+        { avatar: 'https://randomuser.me/api/portraits/women/8.jpg', name: 'Lisa Anderson' }
+      ]
     },
     {
-      icon: './icons/mobile.png',
+      icon: 'https://cdn-icons-png.flaticon.com/512/888/888839.png', // Mobile icon
       title: 'Launch our Mobile App',
-      members: Array(4).fill({ avatar: './profileB.png', name: 'John Doe' })
+      members: [
+        { avatar: 'https://randomuser.me/api/portraits/men/9.jpg', name: 'Chris Martin' },
+        { avatar: 'https://randomuser.me/api/portraits/women/10.jpg', name: 'Rachel Green' },
+        { avatar: 'https://randomuser.me/api/portraits/men/11.jpg', name: 'David Lee' },
+        { avatar: 'https://randomuser.me/api/portraits/women/12.jpg', name: 'Sophie Turner' }
+      ]
     },
     {
-      icon: './icons/pricing.png',
+      icon: 'https://cdn-icons-png.flaticon.com/512/1785/1785219.png', // Pricing icon
       title: 'Add the New Pricing Page',
-      members: Array(1).fill({ avatar: './profileB.png', name: 'John Doe' })
+      members: [
+        { avatar: 'https://randomuser.me/api/portraits/men/13.jpg', name: 'James Wilson' }
+      ]
     },
     {
-      icon: './icons/shop.png',
+      icon: 'https://cdn-icons-png.flaticon.com/512/3081/3081559.png', // Shop icon
       title: 'Redesign New Online Shop',
-      members: Array(3).fill({ avatar: './profileB.png', name: 'John Doe' })
+      members: [
+        { avatar: 'https://randomuser.me/api/portraits/women/14.jpg', name: 'Anna White' },
+        { avatar: 'https://randomuser.me/api/portraits/men/15.jpg', name: 'Peter Parker' },
+        { avatar: 'https://randomuser.me/api/portraits/women/16.jpg', name: 'Mary Jane' }
+      ]
     }
   ];
 
   const orders = [
     {
-      icon: 'notification.png',
+      icon: 'https://cdn-icons-png.flaticon.com/512/3119/3119338.png', // Bell icon
       title: '$2400, Design changes',
       timestamp: '22 DEC 7:20 PM'
     },
     {
-      icon: 'html.png',
+      icon: 'https://cdn-icons-png.flaticon.com/512/5968/5968267.png', // HTML icon
       title: 'New order #18324192',
       timestamp: '21 DEC 11 PM'
     },
     {
-      icon: 'shopping-cart.png',
+      icon: 'https://cdn-icons-png.flaticon.com/512/2838/2838895.png', // Server icon
       title: 'Server payments for April',
       timestamp: '21 DEC 9:34 PM'
     },
     {
-      icon: 'credit-card.png',
+      icon: 'https://cdn-icons-png.flaticon.com/512/179/179457.png', // Credit card icon
       title: 'New card added for order #4395133',
       timestamp: '20 DEC 2:20 AM'
     },
     {
-      icon: 'key.png',
+      icon: 'https://cdn-icons-png.flaticon.com/512/483/483408.png', // Key icon
       title: 'Unlock packages for development',
       timestamp: '18 DEC 4:54 AM'
     },
     {
-      icon: 'money.png',
+      icon: 'https://cdn-icons-png.flaticon.com/512/2838/2838895.png', // Money icon
       title: 'New order #9583120',
       timestamp: '17 DEC 11 PM'
     }
@@ -461,10 +483,17 @@ export default function Home() {
     }
   ];
 
+  const activeUserStats = [
+    { icon: 'https://cdn-icons-png.flaticon.com/512/1077/1077114.png', label: 'Users', value: '36K', progress: 85 },
+    { icon: 'https://cdn-icons-png.flaticon.com/512/1828/1828395.png', label: 'Clicks', value: '2.4K', progress: 65 },
+    { icon: 'https://cdn-icons-png.flaticon.com/512/2838/2838895.png', label: 'Sales', value: '1.2K', progress: 45 },
+    { icon: 'https://cdn-icons-png.flaticon.com/512/2838/2838895.png', label: 'Items', value: '260', progress: 70 }
+  ];
+
   return (
     <div className="flex bg-gray-100 min-h-screen">
-      {/* Navbar - Fixed on large screens */}
-      
+      {/* Navbar */}
+      <Navbar isOpen={isNavOpen} onClose={() => setIsNavOpen(false)} />
 
       {/* Main Content - Scrollable */}
       <div className="flex-1 min-h-screen overflow-y-auto">
@@ -476,30 +505,41 @@ export default function Home() {
                 <h4 className="text-gray-500">
                   Pages <span className="text-black"> / Dashboard</span>
                 </h4>
-                <h3 className="font-bold">Dashboard</h3>
+                <h3 className="font-bold text-black">Dashboard</h3>
               </div>
 
               <div className="flex items-center gap-4">
-                {/* Mobile Menu Toggle */}
-                <button
-                  onClick={() => setIsNavOpen(true)}
-                  className="lg:hidden p-2 hover:bg-gray-200 rounded-xl transition-colors"
-                >
-                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-                  </svg>
-                </button>
-
                 <form className="flex items-center gap-4 w-full lg:w-auto">
                   <input
                     type="text"
                     placeholder="Search here"
-                    className="border border-gray-300 rounded-lg px-4 py-2 w-full lg:w-64 focus:outline-none focus:ring-2 focus:ring-gray-300 transition-all"
+                    className="text-black border border-gray-300 rounded-lg px-4 py-2 w-full lg:w-64 focus:outline-none focus:ring-2 focus:ring-gray-300 transition-all"
                   />
-                  <button className="border-2 border-orange-500 text-orange-500 font-bold rounded-lg px-4 py-2 hover:bg-orange-50 transition-all duration-300 whitespace-nowrap">
+                  <button className="border-2 border-orange-500 text-orange-500 font-bold rounded-lg px-4 py-2 hover:text-black hover:border-black hover:cursor-pointer transition-all duration-300 whitespace-nowrap">
                     Online Builder
                   </button>
                 </form>
+
+                {/* Mobile Menu Toggle */}
+                <button
+                  onClick={() => setIsNavOpen(true)}
+                  className="lg:hidden p-2 hover:bg-gray-200 rounded-xl transition-colors"
+                  aria-label="Toggle navigation menu"
+                >
+                  <svg 
+                    className="w-6 h-6 text-black" 
+                    fill="none" 
+                    stroke="currentColor" 
+                    viewBox="0 0 24 24"
+                  >
+                    <path 
+                      strokeLinecap="round" 
+                      strokeLinejoin="round" 
+                      strokeWidth={2} 
+                      d="M4 6h16M4 12h16M4 18h16"
+                    />
+                  </svg>
+                </button>
               </div>
             </div>
           </nav>
@@ -517,17 +557,17 @@ export default function Home() {
 
               {/* Reviews Section */}
               <div className="bg-white border border-gray-300 rounded-xl p-6 shadow-md h-fit">
-                <h3 className="font-bold text-xl mb-6">Reviews</h3>
+                <h3 className="font-bold text-xl mb-6 text-black">Reviews</h3>
                 <div className="space-y-4">
                   {reviews.map((review, index) => (
                     <ReviewItem key={index} {...review} />
                   ))}
                 </div>
-                <div className="flex justify-between items-center mt-6 pt-6 border-t border-gray-200">
-                  <p className="text-gray-600 max-w-lg">
+                <div className="flex justify-between items-center mt-6 pt-6 gap-5 border-t border-gray-200">
+                  <p className="text-gray-600 max-w-lg lg:">
                     More than <span className="font-bold">1,500,000</span> developers used Creative Tim's products and over <span className="font-bold">700,000</span> projects were created.
                   </p>
-                  <button className="bg-gray-800 text-white font-bold px-6 py-3 rounded-xl hover:bg-gray-700 transition-colors">
+                  <button className="bg-gray-800 text-white font-bold px-4 py-3 rounded-xl hover:cursor-pointer transition-colors">
                     View Review
                   </button>
                 </div>
@@ -540,7 +580,7 @@ export default function Home() {
               <div className="lg:w-[70%] bg-white rounded-xl shadow-md overflow-hidden">
                 <div className="p-2 h-full flex flex-col">
                   <div className="mb-3 px-4 py-2">
-                    <h3 className="font-bold text-lg">Projects</h3>
+                    <h3 className="font-bold text-lg text-black">Projects</h3>
                     <p className="text-gray-500 text-sm">
                       <span className="font-bold text-gray-600">30 done</span> this month
                     </p>
@@ -552,7 +592,7 @@ export default function Home() {
                   </div>
 
                   <div className="flex-1 overflow-y-auto overflow-x-hidden">
-                    <div className="border-b border-gray-200">
+                    <div className="border-b pt-5 border-gray-200 pr-3">
                       {projects.map((project, index) => (
                         <ProjectItem key={index} {...project} />
                       ))}
@@ -565,7 +605,7 @@ export default function Home() {
               <div className="lg:w-[30%] bg-white rounded-xl shadow-md overflow-hidden">
                 <div className="p-4 h-full flex flex-col">
                   <div className="mb-3">
-                    <h3 className="font-bold text-lg">Order Overview</h3>
+                    <h3 className="font-bold text-lg text-black">Order Overview</h3>
                     <p className="text-gray-500 text-sm">
                       <span className="font-bold text-gray-600">24%</span> this month
                     </p>
@@ -581,9 +621,9 @@ export default function Home() {
             </div>
 
             {/* Features and CTA Section */}
-            <div className="flex flex-col lg:flex-row gap-6 h-[35vh] overflow-hidden">
+            <div className="flex flex-col lg:flex-row gap-2 h-[65vh] lg:h-[35vh] overflow-hidden">
               {/* Built by Developers Section */}
-              <div className="lg:w-[60%] overflow-hidden">
+              <div className="lg:w-[60%] h-80 lg:h-[35vh] overflow-hidden">
                 {features.map((feature, index) => (
                   <FeatureCard key={index} {...feature} />
                 ))}

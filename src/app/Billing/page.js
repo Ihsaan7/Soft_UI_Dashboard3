@@ -45,11 +45,19 @@ export default function Billing() {
       {/* Main Content */}
       <div className="px-2 lg:px-8 py-4 space-y-6 w-full">
         {/* Top Row: Card, Salary/Paypal, Invoices */}
-        <div className="w-full flex flex-col lg:flex-row gap-6">
+        <div className="w-full flex flex-col lg:flex-row gap-6 lg:gap-2">
           {/* Card */}
           <div className="flex-1 lg:max-w-md">
-            <div className="bg-gradient-to-r from-gray-800 to-gray-700 rounded-xl p-6 text-white shadow flex flex-col gap-4 min-h-[200px] lg:min-h-[230px] justify-between">
-              <div className="text-2xl font-bold tracking-widest">4562 1122 4594 7852</div>
+            <div className="bg-gradient-to-br from-gray-800 via-gray-700 to-gray-800 rounded-xl p-6 text-white shadow-lg flex flex-col gap-4 min-h-[200px] lg:min-h-[230px] justify-between relative overflow-hidden">
+              {/* Card Design Elements */}
+              <div className="absolute top-0 right-0 w-32 h-32 bg-white opacity-10 rounded-full -mr-16 -mt-16"></div>
+              <div className="absolute bottom-0 left-0 w-32 h-32 bg-white opacity-10 rounded-full -ml-16 -mb-16"></div>
+              
+              <div className="flex justify-between items-start">
+                <div className="text-2xl lg:text-xl font-bold tracking-widest">4562 1122 4594 7852</div>
+                <img src="https://cdn-icons-png.flaticon.com/512/349/349221.png" alt="Mastercard" className="w-12 h-12" />
+              </div>
+              
               <div className="flex justify-between items-center mt-2">
                 <div>
                   <div className="text-xs text-gray-300">Card Holder</div>
@@ -59,25 +67,22 @@ export default function Billing() {
                   <div className="text-xs text-gray-300">Expires</div>
                   <div className="font-bold text-white">11 / 22</div>
                 </div>
-                <div>
-                  <span className="inline-block w-10 h-10 bg-gradient-to-r from-orange-400 to-red-500 rounded-full"></span>
-                </div>
               </div>
             </div>
           </div>
           {/* Salary & Paypal */}
-          <div className="flex-1 flex flex-row lg:flex gap-2">
-            <div className="bg-white rounded-xl p-6 flex flex-col lg:h-fit items-center shadow flex-1 min-w-[100px]">
+          <div className="flex-1 flex flex-row lg:flex lg:flex-0 gap-2 ">
+            <div className="bg-white rounded-xl p-6 flex flex-col lg:h-fit items-center shadow flex-1 lg:flex-0 w-[100px]  ">
               <div className="w-16 h-16 bg-orange-400 rounded-lg mb-4"></div>
               <div className="font-bold text-black text-lg">Salary</div>
               <div className="text-sm text-gray-600 mb-2">Belong Interactive</div>
-              <div className="font-bold text-2xl text-green-600">+$2000</div>
+              <div className="font-bold text-xl text-green-600">$2000+</div>
             </div>
-            <div className="bg-white rounded-xl p-6 flex flex-col lg:h-fit items-center shadow flex-1 min-w-[100px]">
+            <div className="bg-white rounded-xl p-6 flex flex-col lg:h-fit items-center shadow flex-1 min-w-[100px] lg:flex-0">
               <div className="w-16 h-16 bg-orange-400 rounded-lg mb-4"></div>
               <div className="font-bold text-black text-lg">Paypal</div>
               <div className="text-sm text-gray-600 mb-2">Freelance Payment</div>
-              <div className="font-bold text-2xl text-black">$455.00</div>
+              <div className="font-bold text-xl text-black">$455</div>
             </div>
           </div>
           {/* Invoices */}
@@ -123,21 +128,21 @@ export default function Billing() {
                 <button className="bg-black text-white rounded-lg px-4 py-2 text-sm font-semibold">Add New Card</button>
               </div>
               <div className="flex flex-col gap-4">
-                <div className="flex items-center border rounded-lg p-4">
-                  <span className="w-8 h-8 bg-gradient-to-r from-orange-400 to-red-500 rounded-full mr-2"></span>
-                  <span className="flex-1 text-gray-600">**** **** **** 7852</span>
+                <div className="flex items-center border rounded-lg p-4 hover:border-orange-500 transition-colors">
+                  <img src="https://cdn-icons-png.flaticon.com/512/349/349221.png" alt="Mastercard" className="w-8 h-8 mr-2" />
+                  <span className="flex-1 text-gray-600 font-bold">**** **** **** 7852</span>
                   <span className="text-xs font-bold text-black">Mastercard</span>
                 </div>
-                <div className="flex items-center border rounded-lg p-4">
-                  <span className="w-8 h-8 bg-blue-600 rounded-full mr-2"></span>
-                  <span className="flex-1 text-gray-600">**** **** **** 5248</span>
-                  <span className="text-xs font-bold text-black">VISA</span>
+                <div className="flex items-center border rounded-lg p-4 hover:border-orange-500 transition-colors">
+                  <img src="https://cdn-icons-png.flaticon.com/512/349/349221.png" alt="Mastercard" className="w-8 h-8 mr-2" />
+                  <span className="flex-1 text-gray-600 font-bold">**** **** **** 5248</span>
+                  <span className="text-xs font-bold text-black">Mastercard</span>
                 </div>
               </div>
             </div>
           </div>
            {/* Transactions */}
-           <div className="flex-1 lg:max-w-lg mt-5">
+           <div className="flex-1 lg:max-w-lg mt-5 lg:mt-0">
             <div className="bg-white rounded-xl p-6 shadow flex flex-col gap-4">
               <div className="flex justify-between items-center">
                 <div className="font-bold text-black text-lg">Your Transaction's</div>
@@ -218,21 +223,28 @@ export default function Billing() {
                   vat: "FRB1235476",
                 },
               ].map((info, i) => (
-                <div key={i} className="bg-gray-50 rounded-xl p-4 flex flex-col gap-2 shadow">
+                <div key={i} className="bg-gradient-to-r from-gray-50 to-white rounded-xl p-4 flex flex-col gap-2 shadow-sm border border-gray-100 hover:border-orange-200 transition-all">
                   <div className="flex justify-between items-start">
-                    <div className="font-bold text-black">{info.name}</div>
-                    <button className="text-pink-500 font-semibold text-sm">Delete</button>
+                    <div className="font-bold text-black text-lg">{info.name}</div>
+                    <div className="flex gap-2">
+                      <button className="text-orange-500 font-semibold text-sm hover:text-orange-600 transition-colors">Edit</button>
+                      <button className="text-pink-500 font-semibold text-sm hover:text-pink-600 transition-colors">Delete</button>
+                    </div>
                   </div>
-                  <div className="text-gray-600 text-sm">
-                    Company Name: <span className="font-semibold text-black">{info.company}</span>
+                  <div className="grid grid-cols-2 gap-4 mt-2">
+                    <div className="bg-gradient-to-br from-orange-50 to-white p-3 rounded-lg shadow-sm border border-orange-100">
+                      <div className="text-orange-600 text-sm font-medium">Company Name</div>
+                      <div className="font-semibold text-gray-800">{info.company}</div>
+                    </div>
+                    <div className="bg-gradient-to-br from-orange-50 to-white p-3 rounded-lg shadow-sm border border-orange-100">
+                      <div className="text-orange-600 text-sm font-medium">Email Address</div>
+                      <div className="font-semibold text-gray-800">{info.email}</div>
+                    </div>
+                    <div className="bg-gradient-to-br from-orange-50 to-white p-3 rounded-lg shadow-sm border border-orange-100">
+                      <div className="text-orange-600 text-sm font-medium">VAT Number</div>
+                      <div className="font-semibold text-gray-800">{info.vat}</div>
+                    </div>
                   </div>
-                  <div className="text-gray-600 text-sm">
-                    Email Address: <span className="font-semibold text-black">{info.email}</span>
-                  </div>
-                  <div className="text-gray-600 text-sm">
-                    VAT Number: <span className="font-semibold text-black">{info.vat}</span>
-                  </div>
-                  <button className="self-end text-black font-semibold text-sm">Edit</button>
                 </div>
               ))}
             </div>
