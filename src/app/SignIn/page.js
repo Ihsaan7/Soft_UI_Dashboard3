@@ -8,8 +8,12 @@ export default function SignIn() {
   return (
     <div className="min-h-screen bg-white flex flex-col relative overflow-x-hidden">
       {/* Abstract Art Image - behind everything, tilted */}
-      <div className="hidden lg:block absolute top-0 right-0 w-1/2 h-full z-0 pointer-events-none">
-        <img src={ABSTRACT_IMAGE} alt="Abstract Art" className="w-full h-full object-cover -rotate-6 origin-top-right" style={{ minHeight: '100vh' }} />
+      <div className="hidden lg:block absolute top-0 right-0 w-1/2 h-screen z-0 pointer-events-none overflow-hidden">
+        <img 
+          src={ABSTRACT_IMAGE} 
+          alt="Abstract Art" 
+          className="w-full h-full object-cover -rotate-6 origin-top-right" 
+        />
       </div>
       
       {/* Navbar (with transparency) */}
