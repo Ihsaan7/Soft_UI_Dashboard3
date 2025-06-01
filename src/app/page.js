@@ -644,9 +644,6 @@ export default function Home() {
                 <SalesOverview />
               </div>
             </div>
-
-            {/* Footer */}
-            <Footer />
           </div>
         </div>
       </div>
