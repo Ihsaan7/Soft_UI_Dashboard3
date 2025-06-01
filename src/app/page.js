@@ -1,6 +1,6 @@
 'use client'
-import { useState } from 'react';
-import Navbar from './components/Navbar';
+import { useState, useContext } from 'react';
+import { NavbarContext } from './ClientLayout';
 
 const StatsCard = ({ bgColor = 'bg-gray-800', borderColor = 'border-gray-800', value, label, percentage }) => (
   <div className={`${bgColor} rounded-xl w-full h-fit transition-all duration-300 hover:translate-y-[-5px] shadow-[0_20px_25px_-5px_rgba(0,0,0,0.1),0_10px_10px_-5px_rgba(0,0,0,0.04)]`}>
@@ -370,7 +370,7 @@ const Footer = () => {
 };
 
 export default function Home() {
-  const [isNavOpen, setIsNavOpen] = useState(false);
+  const { setIsNavOpen } = useContext(NavbarContext);
 
   const stats = [
     { value: '1600', label: 'Users Active', percentage: '+55%', bgColor: 'bg-orange-400', borderColor: 'border-yellow-600' },
@@ -492,9 +492,6 @@ export default function Home() {
 
   return (
     <div className="flex bg-gray-100 min-h-screen">
-      {/* Navbar */}
-      <Navbar isOpen={isNavOpen} onClose={() => setIsNavOpen(false)} />
-
       {/* Main Content - Scrollable */}
       <div className="flex-1 min-h-screen overflow-y-auto">
         <div className="w-full py-3 flex flex-col gap-6">
