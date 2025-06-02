@@ -73,10 +73,18 @@ export default function Profile() {
             {/* Main Section */}
             <div className=' p-4 gap-5 flex flex-col'>
                 <div className='border bg-orange-400 border-gray-300 rounded-lg flex flex-row justify-between px-4'>
-                    <div className='py-5'>
-                        <img src='./mypic (1).jpg' className='object-cover w-30 h-30 rounded-lg '></img>
-                        <h3 className='text-white font-bold text-2xl w-10 py-2'>IHSAAN ULLAH</h3>
-                        <p className='text-white font-semibold'>CEO/Co-Founder</p>
+                    <div className='py-5 flex items-center gap-4'>
+                        <div className='w-24 h-24 lg:w-32 lg:h-32 rounded-lg overflow-hidden'>
+                            <img 
+                                src='./mypic (1).jpg' 
+                                className='w-full h-full object-cover'
+                                alt="Profile"
+                            />
+                        </div>
+                        <div>
+                            <h3 className='text-white font-bold text-2xl py-2'>IHSAAN ULLAH</h3>
+                            <p className='text-white font-semibold'>CEO/Co-Founder</p>
+                        </div>
                     </div>
                     <div className='flex flex-col gap-2 justify-center items-end'>
                         <button className='border border-white rounded-lg p-2 font-bold hover:cursor-pointer'>Edit Profile</button>
